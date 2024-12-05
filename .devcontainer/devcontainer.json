@@ -1,0 +1,29 @@
+{
+  "name": "Native-Tauri",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "native-tauri",
+  "remoteUser": "developer",
+  "workspaceFolder": "/native-tauri",
+  "initializeCommand": "xhost +local: || true",
+  "postCreateCommand": ".devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "lldb.launch.initCommands": [
+          // Squelches warning when debugging in the container.
+          "settings set target.disable-aslr false"
+        ]
+      },
+      "extensions": [
+        "tauri-apps.tauri-vscode",
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "fill-labs.dependi",
+        "EthanSK.restore-terminals",
+        "redhat.vscode-yaml",
+        "me-dutour-mathieu.vscode-github-actions",
+        "svelte.svelte-vscode"
+      ]
+    }
+  }
+}
